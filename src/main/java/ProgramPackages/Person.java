@@ -6,9 +6,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Represents certain attributes of a serving person which can be retrieved,
+ * These attributes are first name, last name, date, division, points scored
+ * and a summary of their role
  */
 
 /**
@@ -20,19 +20,17 @@ public class Person {
     // initialise variables
     private String firstName;
     private String lastName;
-    private Date date;
+    private String date;
     private Integer division;
     private Integer points;
     private String summary;
-    private SimpleDateFormat dateFormat;
     
     public Person(String[] data) throws ParseException {
-        
-        this.dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        
+                
+        // assign variables their corresponding values from the data parameter
         this.firstName = data[0];
         this.lastName = data[1];
-        this.date = dateFormat.parse(data[2]);
+        this.date = data[2];
         this.division = Integer.parseInt(data[3]);
         this.points = Integer.parseInt(data[4]);
         this.summary = data[5];
@@ -63,7 +61,7 @@ public class Person {
      * Retrieves the persons date
      * @return - a date in the form of a date object
      */
-    public Date getDate() {
+    public String getDate() {
         
         return this.date;
         
